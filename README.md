@@ -1,2 +1,7 @@
 # leetcode-answers
-leetcode题解仓库
+
+leetcode 题解仓库
+
+```bash
+pnpm i
+```
