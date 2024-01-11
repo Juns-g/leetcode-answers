@@ -2,23 +2,23 @@
 
 // #region
 function removeDuplicates(nums: number[]): number {
-    // 双指针，left, right
-    // 如果 left === right, right++
-    // 如果 left !== right, nums[left + 1] = nums[right], left++, right++
-    let left = 0, right = 1
-    while (right < nums.length - 1) {
-        if (nums[left] === nums[right]) right++;
-        else {
-            nums[left + 1] = nums[right]
-            left++;
-            right++
-        }
-        console.log("🚀 ~ right:", right)
-        console.log("🚀 ~ left:", left)
-    }
-    return left
-};
+	// 双指针，left, right
+	// 如果 left === right, right++
+	// 如果 left !== right, nums[left + 1] = nums[right], left++, right++
+	let left = 0,
+		right = 1;
+	while (right < nums.length) {
+		if (nums[left] === nums[right]) {
+			right++;
+			continue;
+		} else {
+			nums[left + 1] = nums[right];
+			left++;
+		}
+	}
+	return left + 1;
+}
 // #endregion
 
-const nums = [1, 1, 2]
-removeDuplicates(nums)
+const nums = [1, 1, 2];
+removeDuplicates(nums);
