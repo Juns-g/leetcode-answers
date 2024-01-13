@@ -98,3 +98,5 @@ obj.addAtTail(3);
 console.log('🚀 ~ obj:', obj);
 obj.addAtIndex(3, 2);
 console.log('🚀 ~ obj:', obj);
+
+export default {};
