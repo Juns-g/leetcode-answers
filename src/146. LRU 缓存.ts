@@ -1,5 +1,6 @@
 // https://leetcode.cn/problems/lru-cache/description/?envType=study-plan-v2&envId=top-interview-150
 // Vue3 的 keepalive 就是用的这个 LRU 来管理组件的缓存
+// 这题用的map来写的，也可以使用双向链表和hashMap来实现，但是麻烦许多
 // #region
 class LRUCache {
 	capacity: number;
