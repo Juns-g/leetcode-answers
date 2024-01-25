@@ -1,0 +1,20 @@
+// https://leetcode.cn/problems/path-sum/description/?envType=study-plan-v2&envId=top-interview-150
+class TreeNode {
+	val: number;
+	left: TreeNode | null;
+	right: TreeNode | null;
+	constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+		this.val = val === undefined ? 0 : val;
+		this.left = left === undefined ? null : left;
+		this.right = right === undefined ? null : right;
+	}
+}
+// #region
+function hasPathSum(root: TreeNode | null, targetSum: number): boolean {
+	if (!root) return false;
+	targetSum -= root.val;
+	if (!root.left && !root.right && targetSum === 0) return true;
+	return hasPathSum(root.left, targetSum) || hasPathSum(root.right, targetSum);
+}
+// #endregion
+export default {};
