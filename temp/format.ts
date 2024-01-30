@@ -1,21 +1,15 @@
-// 二叉树节点
-class Node {
-	val: number;
-	left: Node | null;
-	right: Node | null;
-	constructor(val: number) {
-		this.val = val;
-		this.left = null;
-		this.right = null;
-	}
-}
+const readline = require('readline');
 
-// 二叉树
-class Tree {
-	root: Node | null;
-	constructor() {
-		this.root = null;
-	}
-}
-
-export default {};
+const rl = readline.createInterface({
+	input: process.stdin,
+	output: process.stdout,
+});
+rl.on('line', function (line: any) {
+	console.log("🚀 ~ line:", line)
+	const [str, ch] = line.split(' ');
+	let ans = 0;
+	Array.from(str).forEach((item) => {
+		if (item === ch) ans++;
+	});
+	console.log(ans);
+});

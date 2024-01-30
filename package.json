@@ -1,5 +1,8 @@
 {
 	"dependencies": {
 		"ts-node": "^10.9.2"
+	},
+	"devDependencies": {
+		"@types/node": "^20.11.10"
 	}
 }
