@@ -10,14 +10,32 @@ class TreeNode {
 	}
 }
 // #region
+// 递归 + 前中后序遍历
 function invertTree(root: TreeNode | null): TreeNode | null {
 	if (!root) return null;
-	const r = root?.right ?? null;
-	const l = root?.left ?? null;
-	root.left = r;
+	const l = root.left;
+	root.left = root.right;
 	root.right = l;
+	// 前序
 	invertTree(root.left);
+	// 中序
 	invertTree(root.right);
+	// 后序
+	return root;
+}
+
+// 迭代 + 前序
+function invertTree_2(root: TreeNode | null): TreeNode | null {
+	if (!root) return root;
+	const stack = [root];
+	while (stack.length) {
+		const node = stack.pop()!;
+		node.left && stack.push(node.left);
+		node.right && stack.push(node.right);
+		const l = node.left;
+		node.left = node.right;
+		node.right = l;
+	}
 	return root;
 }
 // #endregion
