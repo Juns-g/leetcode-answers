@@ -18,6 +18,18 @@ function removeDuplicates(nums: number[]): number {
 	}
 	return left + 1;
 }
+function removeDuplicates_2(nums: number[]): number {
+	let slow = 1;
+	let fast = 1;
+	while (fast < nums.length) {
+		if (nums[fast] !== nums[fast - 1]) {
+			nums[slow] = nums[fast];
+			slow++;
+		}
+		fast++;
+	}
+	return slow;
+}
 // #endregion
 
 const nums = [1, 1, 2];
