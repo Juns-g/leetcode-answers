@@ -34,3 +34,5 @@ function removeDuplicates_2(nums: number[]): number {
 
 const nums = [1, 1, 2];
 removeDuplicates(nums);
+
+export {};

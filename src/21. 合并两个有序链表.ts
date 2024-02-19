@@ -36,14 +36,14 @@ function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode
 // #region
 // 递归做法,
 // ! cv到leetcode的时候注意改一下函数名
-function mergeTwoLists2(list1: ListNode | null, list2: ListNode | null): ListNode | null {
+function mergeTwoLists_2(list1: ListNode | null, list2: ListNode | null): ListNode | null {
 	if (!list1) return list2;
 	if (!list2) return list1;
 	if (list1.val < list2.val) {
-		list1.next = mergeTwoLists2(list1.next, list2);
+		list1.next = mergeTwoLists_2(list1.next, list2);
 		return list1;
 	} else {
-		list2.next = mergeTwoLists2(list2.next, list1);
+		list2.next = mergeTwoLists_2(list2.next, list1);
 		return list2;
 	}
 }
