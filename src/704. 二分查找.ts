@@ -19,3 +19,4 @@ function search(nums: number[], target: number): number {
 // #endregion
 
 export default {};
+console.log(search([1, 3], 3));
