@@ -1,6 +1,7 @@
 // https://leetcode.cn/problems/valid-anagram/description/
 
 // #region
+// 哈希表
 function isAnagram(s: string, t: string): boolean {
 	let map = new Map();
 	for (let char of s) {
