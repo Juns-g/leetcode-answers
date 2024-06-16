@@ -1,13 +1,15 @@
-let nums = [2, 3, 4, 5];
-function resolve(nums) {
-	let ans = new Array(nums.length).fill(0);
-	let stack: number[] = [];
-	for (let i = 0; i < nums.length; i++) {
-		while (stack.length && nums[i] > nums[stack.at(-1)]) {
-			let j = stack.pop();
-			ans[j] = i - j;
-		}
-		stack.push(i);
+function maxArea(height: number[]): number {
+	let ans = 0
+	let l = 0
+	let r = height.length - 1
+	while (l < r) {
+		let w = r - l
+		let h = Math.min(height[l], height[r])
+		ans = Math.max(ans, w * h)
+		height[l] < height[r] ? l++ : r--
 	}
-	return ans;
+	return ans
 }
+
+export {}
+console.log(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]))
