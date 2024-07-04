@@ -1,6 +1,6 @@
 // https://leetcode.cn/problems/3sum/description/?envType=study-plan-v2&envId=top-100-liked
 
-import { quickSort } from '../temp/utils/quickSort'
+import { quickSort } from './utils/quickSort'
 
 // #region
 function threeSum(nums: number[]): number[][] {
