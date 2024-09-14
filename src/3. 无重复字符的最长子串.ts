@@ -2,26 +2,26 @@
 
 // #region
 function lengthOfLongestSubstring(s: string): number {
-	const set = new Set<string>();
-	let ans = 0;
+	const set = new Set<string>()
+	let ans = 0
 	let left = 0,
-		right = 0;
+		right = 0
 	while (right < s.length) {
-		if (set.has(s[right])) {
-			set.delete(s[left]);
-			left++;
+		if (set.has(s[right])) {œ
+			set.delete(s[left])
+			left++
 		} else {
-			set.add(s[right]);
-			ans = Math.max(ans, right - left + 1);
+			set.add(s[right])
+			ans = Math.max(ans, set.size)
 			// 或者比较ans和set.size
-			right++;
+			right++
 		}
 	}
-	return ans;
+	return ans
 }
 // #endregion
 
-export default {};
+export default {}
 
-console.log(lengthOfLongestSubstring('abcabcbb'));
-console.log(lengthOfLongestSubstring('bbbbb'));
+console.log(lengthOfLongestSubstring('abcabcbb'))
+console.log(lengthOfLongestSubstring('bbbbb'))
